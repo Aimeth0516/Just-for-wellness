@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<link  rel="icon"   href="imagenes/logo.png" type="image/png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Just.com: El Bienestar Físico que necesitas. | Tienda Online </title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<!----------------------Encabezado de la pagina--------------------->
+<header>
+	<!-- wrap: contenedor que ajusta margenes horizontales del encabezado-->
+	<!-- contenedor para colocar la fecha-->
+	<div class="div-fecha">
+		<p id="p_fecha">hola</p>
+	</div>
+	<div class="wrap">
+		<!-- logo y menu navegacion-->
+		<div class="nav">
+			<div style="float: left;">
+				<!--logo-->
+				<div class="logo">
+					<img src="imagenes/logo.png">
+					<b>Just <span>4 Wellness</span></b>
+				</div>
+			</div>
+			<!-- Menu de navegacion -->
+			<div style="float:right;">
+				<ul class="menu">
+					<li>
+						<a href="index.html">Inicio</a>
+					</li>
+					<li>
+						<a href="quienesSomos.html">¿Quiénes Somos?</a>
+					</li>
+					<li>
+						<a href="productos.html">Productos</a>
+					</li>
+					<li>
+						<a href="contactenos.html"class="active" >Contacténos</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+<!----------------------Contenido de la pagina--------------------->
+<div class="contenido">
+	<!---Coloque aqui el contenido de cada pagina-->
+	<!--div contenedor ajusta los margenes horizontales de los contenidos--> 
+	<div class="contenedor">
+		<div class="portada" style="background-image: url(imagenes/portada.jpg);"></div>
+	</div>
+	<!--Titulo de Pagina-->
+	<div class="contenedor">
+		<h1 class="text_bienvenida">CONTACTÉNOS</h1>
+	</div>
+	<div style="overflow: hidden; background:#fae9f1;">
+		<div class="contenedor">
+		<table id="table-contacto" class="table-50">
+			<tbody>
+				<tr>
+					<td>
+						<h1  style="margin: 20px 0; font-weight: lighter; color: #86303c;">Info</h1>
+						<ul class="ul-contact">
+							<li>SEDE - Las Tablas, Panama. Ave. Moises Espino <br>  OFICINAS - Calle 50, Edificio Inteligente, piso 28</li>
+							<li> Teléfono: 6767-8876</li>
+							<li> Correo: info@justpanama.com</li>
+						</ul>
+					</td>
+					<td>
+						<div class="google-map">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4701.185417115604!2d-80.27877951274715!3d7.7675456007115535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe08d6570e615f08!2sDolce%20%26%20Saladito!5e0!3m2!1sen!2sus!4v1636426002612!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</div>
+	<!-- Formulario-->
+	<div class="contenedor">
+		<form style="margin-top:20px">
+				<h1 style="font-weight: lighter; color:#86303c">Envíanos un mensaje</h1>
+				<table id="table-form" style="margin-top:20px">
+					<tbody>
+						<tr>
+							<td>
+								<label>Nombre</label>
+								<input type="text" id="input_nombre" placeholder="Escriba su Nombre" name="">
+							</td>
+							<td>
+								<label>Apellido</label>
+								<input type="text" id="input_apellido" placeholder="Escriba su Apellido" name="">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Teléfono</label>
+								<input type="text" id="input_telefono" placeholder="Escriba su Número de teléfono" name="">
+							</td>
+							<td>
+								<label>Correo electrónico</label>
+								<input type="text" id="input_email" placeholder="Escriba su Dirección de Correo" name="">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<label>Mensaje:</label>
+								<textarea id="textarea_mensaje" rows="10" cols="50"  placeholder="Escriba su mensaje."></textarea>
+							</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<button id="btn_enviar">Enviar Mensaje</button>
+			</form>
+	</div>
+</div>
+<!--------------------------Pie de pagina--------------------------->
+<footer>
+	<p>(Aimeth Ampudia.) 2021. Sitio Web con los Derechos Reservados.</p>
+</footer>
+<!--------------------------Dialog--------------------------->
+<dialog id="dialog-mensaje">
+		<h3 style="color:#000">Detalles del Mensaje</h3>
+		<table id="tabla_mensaje" border="1px">
+			<thead>
+				<tr>
+					<td>Nombre</td>
+					<td>Apellido</td>
+					<td>Telefono</td>
+					<td>Correo</td>
+					<td>Mensaje</td>
+				</tr>
+			</thead>
+			<tbody id="tabla_contenido">
+				<tr>
+					<td id="td_name"></td>
+					<td id="td_lastName"></td>
+					<td id="td_phoneNumber"></td>
+					<td id="td_email"></td>
+					<td id="td_message"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="text-align:right">
+			<button id="btn_ok">Aceptar</button>
+		</div>
+	</dialog>
+<!-----------------------------Scripts------------------------------->
+<script src="script.js"></script>
+<!--Enviar Mensaje-->
+<script>
+	//Variables
+	var obj_dialog = document.getElementById('dialog-mensaje');
+	var btn_enviar = document.getElementById('btn_enviar');
+	var btn_ok = document.getElementById('btn_ok');
+
+	btn_enviar.addEventListener("click", function(e){
+		//Variables
+		var nombre = document.getElementById('input_nombre').value;
+		var apellido = document.getElementById('input_apellido').value;
+		var telefono = document.getElementById('input_telefono').value;
+		var email = document.getElementById('input_email').value;
+		var mensaje = document.getElementById('textarea_mensaje').value;
+
+		
+
+ 	 	document.getElementById("td_name").innerHTML = nombre;
+ 	 	document.getElementById("td_lastName").innerHTML = apellido;
+ 	 	document.getElementById("td_phoneNumber").innerHTML = telefono;
+ 	 	document.getElementById("td_email").innerHTML = email;
+ 	 	document.getElementById("td_message").innerHTML = mensaje;
+
+		obj_dialog.showModal();
+		e.preventDefault();
+	});
+
+	btn_ok.addEventListener("click", function(){
+		obj_dialog.close();
+	});
+</script>
+</html>
